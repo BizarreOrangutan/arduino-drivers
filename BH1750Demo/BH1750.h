@@ -31,12 +31,27 @@ enum Mode {
 class BH1750 {
     private:
         uint8_t address;
-        Mode mode;
+        uint8_t init_time;
+        uint8_t mode;
     
     public:
         BH1750();
-        bool begin(uint8_t pin, Mode mode);
+        
+        /**
+         * @brief Initialize the BH1750 sensor
+         * @param mode Measurement mode (continuous high/low resolution)
+         * @return true if initialization successful, false otherwise
+         * @note Requires Wire.begin() to be called first
+         */
+        bool begin(Mode mode);
+
+        /**
+         * @brief Retrieves the current light reading
+         * @param buffer Two byte buffer to store the reading
+         * @return true if reading was stored successful, false otherwise
+         */
         bool read_light(uint16_t* buffer);
+
         ~BH1750();
 };
 
