@@ -1,7 +1,7 @@
 /**
  * @file BH1750.h
  * @brief Arduino library for BH1750 ambient light sensor
- * @author Jamie
+ * @author Jamie Hunt
  * @date 2025-12-07
  * @version 1.0
  */
@@ -24,7 +24,7 @@ enum Mode {
  * @class BH1750
  * @brief Interface for BH1750 digital ambient light sensor
  * 
- * Supports continuous and one-time measurement modes.
+ * Supports multiple resolutions of continuous measurement modes.
  * Communicates via I2C protocol.
  */
 
